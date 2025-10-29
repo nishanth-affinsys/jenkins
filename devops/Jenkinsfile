@@ -13,7 +13,7 @@ spec:
       privileged: true
 ''' 
 ) {
-    node(POD_LABELS) {
+    node(POD_LABEL) {
         container('git') {
             stage('Print Env') {
                 sh '''
