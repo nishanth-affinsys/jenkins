@@ -9,6 +9,7 @@ spec:
   - name: git
     image: alpine/git:latest
     command:
+    - cat
     securityContext:
       privileged: true
 ''' 
