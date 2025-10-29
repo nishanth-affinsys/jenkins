@@ -1,0 +1,28 @@
+podtemplate(yaml: '''
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+spec:
+  containers:
+  - name: git
+    image: alpine:git
+    command:
+    securityContext:
+      privileged: true
+''' 
+) {
+    node(POD_LABELS) {
+        container('git') {
+            stage('Print Env') {
+                sh '''
+                  echo $BUILD_NUMBER
+                  echo $GIT_URL
+                  echo $GIT_BRANCH
+                '''
+            }
+        }
+    }
+   
+}
