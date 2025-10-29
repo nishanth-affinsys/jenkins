@@ -19,9 +19,9 @@ spec:
         container('git') {
             stage('Print Env') {
                 sh '''
-                  echo $BUILD_NUMBER
-                  echo $GIT_URL
-                  echo $GIT_BRANCH
+                  echo "build number: ${env.BUILD_NUMBER}"
+                  echo "git url: ${env.GIT_URL}"
+                  echo "git branch: ${env.GIT_BRANCH}"
                 '''
             }
         }
