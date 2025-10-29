@@ -24,8 +24,8 @@ spec:
                   echo "build number: $BUILD_NUMBER"
                   echo "job name: $JOB_NAME"
                   echo "workspace: $WORKSPACE"
-                  echo "$GIT_URL"
-                  echo "$GIT_BRANCH"
+                  echo "${env.GIT_URL}"
+                  echo "${env.GIT_BRANCH}"
                 '''
             }
         }
