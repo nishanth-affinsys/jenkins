@@ -18,10 +18,14 @@ spec:
     node(POD_LABEL) {
         container('git') {
             stage('Print Env') {
+                checkout scm
+
                 sh '''
                   echo "build number: $BUILD_NUMBER"
                   echo "job name: $JOB_NAME"
                   echo "workspace: $WORKSPACE"
+                  echo "$GIT_URL"
+                  echo "$GIT_BRANCH"
                 '''
             }
         }
