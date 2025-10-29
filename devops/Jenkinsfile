@@ -10,6 +10,7 @@ spec:
     image: alpine/git:latest
     command:
     - cat
+    tty: true
     securityContext:
       privileged: true
 ''' 
