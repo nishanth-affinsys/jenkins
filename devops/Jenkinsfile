@@ -25,7 +25,7 @@ spec:
                 sh """
                   echo "owner: \$owner"
                   echo "repoUrl: ${repoUrl}"
-                  echo "git commit: $GIT_COMMIT"
+                  echo "git commit: $BUILD_NUMBER"
                 """
             }
         }
