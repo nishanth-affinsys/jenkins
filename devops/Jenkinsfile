@@ -3,7 +3,7 @@ String determineRepoName() {
 }
 
 def repoUrl = scm.getUserRemoteConfigs()[0].getUrl()
-def repoName = determineRepoName(repoUrl)
+def repoName = determineRepoName()
 env.owner = "Nishanth"
 podTemplate(yaml: '''
 apiVersion: v1
