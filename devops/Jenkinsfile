@@ -1,3 +1,4 @@
+def repoUrl = scm.getUserRemoteConfigs()[0].getUrl()
 podTemplate(yaml: '''
 apiVersion: v1
 kind: Pod
@@ -24,8 +25,7 @@ spec:
                   echo "build number: $BUILD_NUMBER"
                   echo "job name: $JOB_NAME"
                   echo "workspace: $WORKSPACE"
-                  echo "git url: $GIT_URL"
-                  echo "git branch: $GIT_BRANCH"
+                  echo "${env.repoUrl}
                 '''
             }
         }
