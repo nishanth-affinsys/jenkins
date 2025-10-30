@@ -22,9 +22,9 @@ spec:
             stage('Print Env') {
                 checkout scm
 
-                sh """
+                sh '''
                   echo "owner: \$owner"
-                """
+                '''
             }
         }
     }
