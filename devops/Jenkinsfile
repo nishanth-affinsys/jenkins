@@ -23,7 +23,7 @@ spec:
                 checkout scm
 
                 sh """
-                  echo "owner: $owner"
+                  echo "owner: \$owner"
                 """
             }
         }
