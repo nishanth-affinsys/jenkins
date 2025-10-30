@@ -25,7 +25,7 @@ spec:
                   echo "build number: $BUILD_NUMBER"
                   echo "job name: $JOB_NAME"
                   echo "workspace: $WORKSPACE"
-                  echo "${env.repoUrl}
+                  echo "${env.repoUrl}"
                 '''
             }
         }
