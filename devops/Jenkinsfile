@@ -1,4 +1,9 @@
+String determineRepoName() {
+    return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/')[3].split("\\.")[0]
+}
+
 def repoUrl = scm.getUserRemoteConfigs()[0].getUrl()
+def repoName = determineRepoName(repoUrl)
 env.owner = "Nishanth"
 podTemplate(yaml: '''
 apiVersion: v1
@@ -25,7 +30,7 @@ spec:
                 sh """
                   echo "owner: \$owner"
                   echo "repoUrl: ${repoUrl}"
-                  echo "git commit: $BUILD_NUMBER"
+                  echo "repoName: ${repoName}"
                 """
             }
         }
