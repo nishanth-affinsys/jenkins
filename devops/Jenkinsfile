@@ -24,6 +24,7 @@ spec:
 
                 sh '''
                   echo "owner: \$owner"
+                  echo "repoUrl: ${repoUrl}"
                 '''
             }
         }
