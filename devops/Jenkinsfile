@@ -21,12 +21,12 @@ spec:
             stage('Print Env') {
                 checkout scm
 
-                sh '''
+                sh """
                   echo "build number: $BUILD_NUMBER"
                   echo "job name: $JOB_NAME"
                   echo "workspace: $WORKSPACE"
-                  echo "${env.repoUrl}"
-                '''
+                  echo "repo url: ${repoUrl}"
+                """
             }
         }
     }
